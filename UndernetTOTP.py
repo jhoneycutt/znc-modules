@@ -31,7 +31,7 @@
 # To use this module:
 #   1. Install it to ~/.znc/modules/
 #   2. /query *status LoadMod modpython
-#   3. /query *status LoadMod UndernetTOTP
+#   3. /query *status LoadMod --type=network UndernetTOTP
 #   4. /query *UndernetTOTP SetSecret SECRET_GOES_HERE
 #   5. Do /query *UndernetTOTP ShowTOTP, and verify that TOTP matches.
 #   6. If you want to use LoC, ensure that your server has a password set.
@@ -53,7 +53,6 @@ DEBUG = False
 
 class UndernetTOTP(znc.Module):
     description = "Automatic OTP (OATH-TOTP) authentication with Undernet's channel services (X) and Login on Connect (LoC)."
-    module_types = [znc.CModInfo.UserModule, znc.CModInfo.NetworkModule]
 
 
     @property
